@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Note = void 0;
-const appreciation_enum_1 = require("./appreciation.enum");
+const appreciation_enum_1 = require("./enums/appreciation.enum");
 class Note {
     constructor(matiere, valeur) {
         this._matiere = matiere;

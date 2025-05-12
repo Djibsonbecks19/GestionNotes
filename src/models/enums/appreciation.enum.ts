@@ -7,4 +7,4 @@ export enum Appreciation {
     Insuffisant = "Insuffisant",
     TresInsuffisant = "Tres Insuffisant",
     Null = "Null",
-    }
+}

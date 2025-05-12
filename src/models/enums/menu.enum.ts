@@ -6,7 +6,9 @@ export enum MenuOptions {
     SuppressionEtudiant = 5,
     AfficherMeilleurEtudiant = 6,
     AfficherMoyenneClasse = 7,
-    Quitter = 8,
+    AjouterClasse = 8,
+    AfficherLesClasses = 9,
+    Quitter = 10,
 
 }
 
@@ -18,5 +20,7 @@ export enum MenuMessage {
     SuppressionEtudiant = "Supprimer un Etudiant",
     AfficherMeilleurEtudiant = "Afficher le Meilleur etudiants ",
     AfficherMoyenneClasse = "Afficher la moyenne de la classe",
+    AjouterClasse = "Ajouter une classe",
+    AfficherLesClasses = "Afficher les classes",
     Quitter = "Quitter",
 }

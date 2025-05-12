@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Etudiant = void 0;
-const message_error_enum_1 = require("../enums/message.error.enum");
+const message_error_enum_1 = require("./enums/message.error.enum");
 const personne_model_1 = require("./personne.model");
 class Etudiant extends personne_model_1.Personne {
     constructor(nom, prenom, age, matricule, classe) {
@@ -27,7 +27,7 @@ class Etudiant extends personne_model_1.Personne {
         }
     }
     toString() {
-        return `${super.toString()}, Classe: ${this._classe}`;
+        return `${super.toString()}, Classe: ${this._classe.filiere} ${this._classe.niveau}, Notes: ${this._notes.length != 0 ? this._notes.map(note => note.valeur).join(", ") : "Aucune note"}`;
     }
     copy(p) {
         return new Etudiant(p.nom, p.prenom, p.age, p.matricule, p.classe);

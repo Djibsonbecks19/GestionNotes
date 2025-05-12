@@ -1,11 +1,13 @@
-import { MessageError } from "../enums/message.error.enum";
+import { MessageError } from "./enums/message.error.enum";
 import { Note } from "./note.model";
 import { Personne } from "./personne.model";
+import { Classe } from "./classe.model";
 
 export class Etudiant extends Personne {
     private _notes: Note[] = [];
-    private _classe: string ;
-    constructor(nom: string, prenom: string, age: number, matricule: string, classe:string) {
+    private _classe: Classe;
+
+    constructor(nom: string, prenom: string, age: number, matricule: string, classe: Classe) {
         super(nom, prenom, age, matricule);
         this._classe = classe;
     }
@@ -13,10 +15,10 @@ export class Etudiant extends Personne {
     get notes(): Note[] {
         return this._notes;
     }
-    get classe(): string {
+    get classe(): Classe {
         return this._classe;
     }
-    set classe(classe: string) {
+    set classe(classe: Classe) {
         this._classe = classe;
     }
 
@@ -28,7 +30,7 @@ export class Etudiant extends Personne {
         }
     }
     public toString(): string {
-        return `${super.toString()}, Classe: ${this._classe}`;
+        return `${super.toString()}, Classe: ${this._classe.filiere} ${this._classe.niveau}, Notes: ${this._notes.length != 0 ? this._notes.map(note => note.valeur).join(", ") : "Aucune note"}`;
     }
     public copy(p: Etudiant): Etudiant {
         return new Etudiant(p.nom, p.prenom, p.age, p.matricule, p.classe);

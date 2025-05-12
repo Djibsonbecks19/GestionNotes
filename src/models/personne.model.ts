@@ -29,7 +29,7 @@ export class Personne implements IModel {
     }
 
     get matricule(): string {
-        return this.matricule;
+        return this._matricule;
     }
     set matricule(matricule: string) {
         this._matricule = matricule;

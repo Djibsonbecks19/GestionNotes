@@ -8,11 +8,26 @@
     "start": "node dist/main.js",
     "dev": "tsc --watch"
   },
+  "compilerOptions": {
+    "target": "ES2020",
+    "module": "commonjs",
+    "outDir": "./dist",
+    "rootDir": "./src",
+    "strict": true,
+    "esModuleInterop": true,
+    "types": [
+      "node"
+    ]
+  },
   "keywords": [],
-  "author": "Adama NIANG <adamaniangtkd81@gmail.com>",
+  "author": "Djibril Mouhamad TRAORÉ <traodjibril.250@gmail.com>",
   "license": "MIT",
   "description": "",
   "devDependencies": {
+    "@types/node": "^22.15.15",
     "typescript": "^5.8.3"
+  },
+  "dependencies": {
+    "readline-sync": "^1.4.10"
   }
 }

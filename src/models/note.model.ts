@@ -1,4 +1,4 @@
-import { Appreciation } from "./appreciation.enum";
+import { Appreciation } from "./enums/appreciation.enum";
 
 export class Note {
     private _matiere : string;
