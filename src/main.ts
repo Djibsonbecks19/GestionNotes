@@ -25,11 +25,11 @@ export class Main {
                     console.log("");
                     console.log("Sélectionnez la classe de l'étudiant par son ID:");
                     classes.forEach((classe) => {
-                        console.log(`Id: ${classe.Id}, Classe: ${classe.libelle}`);
+                        console.log(`Id: ${classe.id}, Classe: ${classe.libelle}`);
                     });
                     const classeId = readline.questionInt("Classe de l'étudiant: ");
 
-                    let classe: Classe | undefined = classes.find((c) => c.Id === classeId);
+                    let classe: Classe | undefined = classes.find((c) => c.id === classeId);
 
                     if (!classe) {
                         console.log("Classe invalide.");
@@ -106,6 +106,8 @@ export class Main {
                     console.log("Classe ajoutée avec succès!");
                     break;
                 }
+
+                
                 case MenuOptions.AfficherLesClasses: {
                     console.log("Liste des classes:");
                     classes.forEach((classe) => {
