@@ -26,5 +26,6 @@ export class MenuView {
         console.log("\n=== NIVEAUX DISPONIBLES ===");
         console.log("1. Licence 1");
         console.log("2. Licence 2");
+        console.log("3. Licence 3");
     }
 }

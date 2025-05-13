@@ -15,6 +15,7 @@ export class Etudiant extends Personne {
     get notes(): Note[] {
         return this._notes;
     }
+
     get classe(): Classe {
         return this._classe;
     }
@@ -26,7 +27,7 @@ export class Etudiant extends Personne {
         if (note.valeur >= 0 && note.valeur <= 20) {
             this._notes.push(note);
         } else {
-            throw new Error(MessageError.NoteNoteFound);
+            throw new Error(MessageError.NoteNotFound);
         }
     }
     public toString(): string {
@@ -46,8 +47,6 @@ export class Etudiant extends Personne {
         return sommeNotes / this.notes.length;
             
     }
-
-
-
+    
 
 }

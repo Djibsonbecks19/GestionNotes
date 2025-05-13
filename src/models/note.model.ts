@@ -1,14 +1,21 @@
 import { Appreciation } from "./enums/appreciation.enum";
+import { MessageError } from "./enums/message.error.enum";
 
 export class Note {
+    private readonly _id: number;
+    private static idCounter = 0;
     private _matiere : string;
     private _valeur : number;
-    private _appreciation : Appreciation;
+    private readonly _appreciation : Appreciation;
 
     constructor(matiere: string, valeur: number) {
+        this._id = Note.idCounter++;
         this._matiere = matiere;
         this._valeur = valeur;
         this._appreciation = this.calculeAppreciation();
+    }
+    get id(): number {
+        return this._id;
     }
     get matiere(): string {
         return this._matiere;
@@ -27,6 +34,9 @@ export class Note {
     }
 
     private calculeAppreciation(): Appreciation {
+        if (this._valeur < 0 || this._valeur > 20) {
+            throw new Error(MessageError.NoteNotFound);
+        }
         if (this._valeur >= 18) return Appreciation.Excellent;
         if (this._valeur >= 16) return Appreciation.TresBien;
         if (this._valeur >= 14) return Appreciation.Bien;
@@ -34,7 +44,7 @@ export class Note {
         if (this._valeur >= 10) return Appreciation.Passable;
         if (this._valeur >= 8) return Appreciation.Insuffisant;
         if (this._valeur >= 6) return Appreciation.TresInsuffisant;
-        return Appreciation.Null;
+        return Appreciation.Nul;
         
     }
 

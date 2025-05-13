@@ -1,7 +1,7 @@
 import { IModel } from "./model.interface";
 
 export class Personne implements IModel {
-    private _id: number;
+    private readonly _id: number;
     private _nom: string;
     private _prenom: string;
     private _age: number;
